@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blood Donation System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <div class="stars" id="stars"></div>
+  <div class="ripple ripple-1"></div>
+  <div class="ripple ripple-2"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">??</div>
+      <div>
+        <h1>Blood Donation System</h1>
+        <p>BCA Semester Project • Emergency Blood Finder • Donation Portal</p>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#search">Search</a>
+      <a href="#donors">Donors</a>
+      <a href="#compatibility">Compatibility</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero glass">
+      <div class="hero-content">
+        <span class="badge glow">Live Matching System</span>
+        <h2>Find blood donors fast. Register donors. Save time in emergencies.</h2>
+        <p>
+          A modern college project website with a premium dashboard, animated visuals,
+          blood type search, donor cards, request form, and emergency contact section.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#search" class="btn primary">Search Blood</a>
+          <a href="#donors" class="btn secondary">View Donors</a>
+        </div>
+
+        <div class="hero-stats" id="dashboard">
+          <div class="stat-card">
+            <span>12,480</span>
+            <p>Registered Donors</p>
+          </div>
+          <div class="stat-card">
+            <span>3,260</span>
+            <p>Blood Requests</p>
+          </div>
+          <div class="stat-card">
+            <span>2,914</span>
+            <p>Successful Matches</p>
+          </div>
+          <div class="stat-card">
+            <span>86</span>
+            <p>Hospitals Connected</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-panel glass">
+        <div class="panel-top">
+          <div>
+            <h3>Emergency Request Panel</h3>
+            <p>Submit a blood need request quickly</p>
+          </div>
+          <span class="live-dot">LIVE</span>
+        </div>
+
+        <form class="request-form" id="requestForm">
+          <div class="field-row">
+            <input type="text" id="patientName" placeholder="Patient Name" required />
+            <input type="text" id="phone" placeholder="Phone Number" required />
+          </div>
+
+          <div class="field-row">
+            <select id="bloodGroup">
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+            </select>
+            <input type="text" id="hospital" placeholder="Hospital / Blood Bank" required />
+          </div>
+
+          <textarea id="details" rows="4" placeholder="Write emergency details, city, and requirement..."></textarea>
+
+          <button type="submit" class="btn primary full">Send Emergency Request</button>
+        </form>
+
+        <div class="mini-alert">
+          <span class="pulse"></span>
+          Nearby matching donors will be highlighted instantly in the dashboard.
+        </div>
+      </div>
+    </section>
+
+    <section class="search-section glass" id="search">
+      <div class="section-head">
+        <h3>Search Blood Type</h3>
+        <p>Enter blood type and city to find matching donors</p>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Type blood group like O-, A+, AB..." />
+        <input type="text" id="cityInput" placeholder="Enter city or area" />
+        <button class="btn primary" id="searchBtn">Search</button>
+      </div>
+
+      <div class="blood-buttons" id="bloodButtons">
+        <button class="blood-btn active" data-group="All">All</button>
+        <button class="blood-btn" data-group="A+">A+</button>
+        <button class="blood-btn" data-group="A-">A-</button>
+        <button class="blood-btn" data-group="B+">B+</button>
+        <button class="blood-btn" data-group="B-">B-</button>
+        <button class="blood-btn" data-group="AB+">AB+</button>
+        <button class="blood-btn" data-group="AB-">AB-</button>
+        <button class="blood-btn" data-group="O+">O+</button>
+        <button class="blood-btn" data-group="O-">O-</button>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <section class="glass donors-section" id="donors">
+        <div class="section-head">
+          <h3>Nearby Donors</h3>
+          <p>Verified donor cards with availability status</p>
+        </div>
+        <div class="donor-list" id="donorList"></div>
+      </section>
+
+      <section class="glass info-section">
+        <div class="section-head">
+          <h3>How It Works</h3>
+          <p>Simple emergency flow for fast coordination</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <span>1</span>
+            <div>
+              <h4>Search Blood Type</h4>
+              <p>Enter the required blood group and location.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span>2</span>
+            <div>
+              <h4>Verify Donor</h4>
+              <p>Check availability, city, and last donation date.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span>3</span>
+            <div>
+              <h4>Connect</h4>
+              <p>Call, message, or share the hospital details.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span>4</span>
+            <div>
+              <h4>Donate Safely</h4>
+              <p>Follow health guidance and complete donation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="notice-box">
+          <h4>Important Note</h4>
+          <p>
+            This project is designed for donation coordination and emergency support.
+            It does not support blood selling.
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="glass compatibility-section" id="compatibility">
+      <div class="section-head">
+        <h3>Blood Compatibility Guide</h3>
+        <p>Useful for quick reference during emergencies</p>
+      </div>
+
+      <div class="compat-grid">
+        <div class="compat-card">
+          <h4>O-</h4>
+          <p>Can donate to: All blood groups</p>
+          <p>Can receive from: O- only</p>
+        </div>
+        <div class="compat-card">
+          <h4>O+</h4>
+          <p>Can donate to: O+, A+, B+, AB+</p>
+          <p>Can receive from: O-, O+</p>
+        </div>
+        <div class="compat-card">
+          <h4>A+</h4>
+          <p>Can donate to: A+, AB+</p>
+          <p>Can receive from: O-, O+, A-, A+</p>
+        </div>
+        <div class="compat-card">
+          <h4>A-</h4>
+          <p>Can donate to: A-, A+, AB-, AB+</p>
+          <p>Can receive from: O-, A-</p>
+        </div>
+        <div class="compat-card">
+          <h4>B+</h4>
+          <p>Can donate to: B+, AB+</p>
+          <p>Can receive from: O-, O+, B-, B+</p>
+        </div>
+        <div class="compat-card">
+          <h4>B-</h4>
+          <p>Can donate to: B-, B+, AB-, AB+</p>
+          <p>Can receive from: O-, B-</p>
+        </div>
+        <div class="compat-card">
+          <h4>AB+</h4>
+          <p>Can donate to: AB+ only</p>
+          <p>Can receive from: All blood groups</p>
+        </div>
+        <div class="compat-card">
+          <h4>AB-</h4>
+          <p>Can donate to: AB-, AB+</p>
+          <p>Can receive from: O-, A-, B-, AB-</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <section class="glass donor-form-section">
+        <div class="section-head">
+          <h3>Register as Donor</h3>
+          <p>Add important details to appear in search results</p>
+        </div>
+
+        <form class="donor-form" id="donorForm">
+          <div class="field-row">
+            <input type="text" id="donorName" placeholder="Full Name" required />
+            <input type="text" id="donorCity" placeholder="City" required />
+          </div>
+
+          <div class="field-row">
+            <select id="donorBlood">
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+            </select>
+            <input type="text" id="donorPhone" placeholder="Phone Number" required />
+          </div>
+
+          <div class="field-row">
+            <input type="text" id="lastDonation" placeholder="Last Donation (e.g. 30 days ago)" />
+            <select id="availableStatus">
+              <option>Available</option>
+              <option>Busy</option>
+            </select>
+          </div>
+
+          <textarea id="donorNote" rows="4" placeholder="Add note: verified, hospital nearby, willing to travel..."></textarea>
+
+          <button type="submit" class="btn secondary full">Add Donor Profile</button>
+        </form>
+      </section>
+
+      <section class="glass contact-section" id="contact">
+        <div class="section-head">
+          <h3>Emergency Support</h3>
+          <p>Useful contact details for presentation</p>
+        </div>
+
+        <div class="contact-card">
+          <h4>24/7 Hotline</h4>
+          <p>+91 98765 43210</p>
+        </div>
+        <div class="contact-card">
+          <h4>Local Blood Bank</h4>
+          <p>City General Hospital Blood Bank</p>
+        </div>
+        <div class="contact-card">
+          <h4>Email Support</h4>
+          <p>support@blooddonationdemo.in</p>
+        </div>
+        <div class="contact-card">
+          <h4>Project Features</h4>
+          <p>Search, request, donate, donor listing, compatibility, alerts</p>
+        </div>
+
+        <div class="faq">
+          <h4>FAQ</h4>
+          <details open>
+            <summary>Can I buy blood here?</summary>
+            <p>No. This is made for donation and emergency coordination only.</p>
+          </details>
+          <details>
+            <summary>Does it store donor details?</summary>
+            <p>This demo stores data only in the browser for presentation.</p>
+          </details>
+          <details>
+            <summary>Is it suitable for BCA submission?</summary>
+            <p>Yes. It has a modern UI and clear project sections.</p>
+          </details>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">Action completed</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
