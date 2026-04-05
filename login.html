@@ -822,3 +822,890 @@ tbody tr:hover { background: rgba(255,255,255,0.04); }
         <button class="mini-btn" id="navUser">User</button>
         <button class="mini-btn" id="navCompat">Compatibility</button>
         <a class="mini-btn" href="index.html">Home</a>
+</div>
+    </header>
+
+    <section class="hero">
+      <div class="glass panel">
+        <div class="badge-row">
+          <span class="badge glow">Click-ready UI</span>
+          <span class="badge">Admin + User Login</span>
+          <span class="badge">LocalStorage Demo</span>
+        </div>
+
+        <h2 class="headline">One page. Two roles. A stronger BloodNet login.</h2>
+        <p class="subtext">
+          This version gives you a proper clickable interface with real buttons, role switching,
+          login actions, request management, quick demo fill, compatibility popups, and dashboard cards.
+          It is made to match the dark glass look of your main BloodNet site.
+        </p>
+
+        <div class="hero-actions">
+          <button class="action-btn primary" id="quickAdmin">Login as Admin</button>
+          <button class="action-btn secondary" id="quickUser">Login as User</button>
+          <button class="action-btn ghost" id="openCompat">Blood Guide</button>
+          <button class="action-btn ghost" id="fillDemoBtn">Fill Demo Data</button>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Admin Controls</h3>
+            <p>See blood requests, mark them handled, delete old records, and search by name or blood group.</p>
+          </div>
+          <div class="feature-card">
+            <h3>User Flow</h3>
+            <p>Normal users can log in with a name and password, then create blood requests instantly.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Clickable Buttons</h3>
+            <p>Every major action uses a real button, so the page feels like a proper website and not just text.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Project Friendly</h3>
+            <p>Everything runs inside one HTML file, which makes uploading to GitHub simple and clean.</p>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card"><span id="statUsers">128</span><p>Demo Users</p></div>
+          <div class="stat-card"><span id="statReqs">24</span><p>Saved Requests</p></div>
+          <div class="stat-card"><span id="statAdmins">1</span><p>Admin Access</p></div>
+          <div class="stat-card"><span id="statMatches">96%</span><p>UI Match</p></div>
+        </div>
+      </div>
+
+      <div class="glass login-card">
+        <div class="login-head">
+          <div>
+            <h2 id="formTitle">Welcome back</h2>
+            <p id="formSubtitle">Switch role and enter the dashboard with one click.</p>
+          </div>
+          <span class="live-pill">BETA LOGIN</span>
+        </div>
+
+        <div class="tabs">
+          <button class="tab-btn active" data-mode="admin" type="button">Admin Login</button>
+          <button class="tab-btn" data-mode="user" type="button">User Login</button>
+        </div>
+
+        <form id="loginForm" class="form-stack">
+          <div class="field">
+            <label for="username">Username</label>
+            <input id="username" type="text" placeholder="Enter username" autocomplete="username" required />
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="password-wrap">
+              <input id="password" type="password" placeholder="Enter password" autocomplete="current-password" required />
+              <button class="toggle-pass" type="button" id="togglePass">👁</button>
+            </div>
+          </div>
+
+          <div class="help-row">
+            <span class="hint" id="credentialsHint">Admin credentials: admin / admin000</span>
+            <button class="mini-btn" type="button" id="fillDemo">Fill Demo</button>
+          </div>
+
+          <button class="action-btn primary" type="submit" id="loginBtn">Enter Admin Panel</button>
+        </form>
+
+        <div class="divider">quick actions</div>
+
+        <div class="form-stack">
+          <button class="action-btn secondary" type="button" id="goHome">Open Main Website</button>
+          <button class="action-btn ghost" type="button" id="showCompat">Check Blood Compatibility</button>
+          <button class="action-btn ghost" type="button" id="seedData">Restore Demo Requests</button>
+        </div>
+
+        <div class="status-box" id="statusBox">
+          Tip: use the role tabs or buttons above. Admin gets the request dashboard. User gets a request form.
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-wrap">
+      <section class="section hidden" id="adminPanel">
+        <div class="section-head">
+          <div>
+            <h3>Admin Control Center</h3>
+            <p>Manage incoming blood requests, update status, and keep the demo clean.</p>
+          </div>
+          <span class="live-pill">ADMIN MODE</span>
+        </div>
+
+        <div class="pill-row">
+          <span class="pill">📋 Request Queue</span>
+          <span class="pill">⚡ Fast Actions</span>
+          <span class="pill">🗃️ Browser Storage</span>
+          <span class="pill">🔐 Demo Authentication</span>
+        </div>
+
+        <div class="tool-grid">
+          <div class="tool">
+            <div class="ico">📥</div>
+            <div>
+              <h5>Incoming Requests</h5>
+              <p>See every submitted blood need request and take action immediately.</p>
+            </div>
+          </div>
+          <div class="tool">
+            <div class="ico">✅</div>
+            <div>
+              <h5>Mark Handled</h5>
+              <p>Update a request when help has been arranged or a donor is connected.</p>
+            </div>
+          </div>
+          <div class="tool">
+            <div class="ico">🧹</div>
+            <div>
+              <h5>Remove Old Data</h5>
+              <p>Delete outdated records to keep the dashboard neat for presentation.</p>
+            </div>
+          </div>
+          <div class="tool">
+            <div class="ico">📊</div>
+            <div>
+              <h5>Simple Overview</h5>
+              <p>Check totals, handled requests, and pending entries in one place.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="login-pair">
+          <h4>Admin Credentials</h4>
+          <ul>
+            <li>Username: <strong>admin</strong></li>
+            <li>Password: <strong>admin000</strong></li>
+          </ul>
+        </div>
+
+        <div class="table-top" style="margin-top:18px;">
+          <div>
+            <h4 style="font-size:18px;">Blood Requests</h4>
+            <p style="margin-top:5px; color:var(--muted); font-size:14px;">Search requests and manage them using buttons.</p>
+          </div>
+          <div class="search-mini">
+            <input type="text" id="adminSearch" placeholder="Search name, blood group, city..." />
+            <button class="mini-btn" id="refreshAdmin" type="button">Refresh</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Patient / User</th>
+                <th>Blood Group</th>
+                <th>Hospital / City</th>
+                <th>Phone</th>
+                <th>Details</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="adminTableBody"></tbody>
+          </table>
+        </div>
+
+        <div class="note-box">
+          This is a front-end demo panel. For a real college full-stack version, you would connect it to a database like Firebase, MySQL, or MongoDB.
+        </div>
+      </section>
+
+      <section class="section hidden" id="userPanel">
+        <div class="section-head">
+          <div>
+            <h3>User Dashboard</h3>
+            <p>Normal users can request blood and see their own saved entries.</p>
+          </div>
+          <span class="live-pill">USER MODE</span>
+        </div>
+
+        <div class="pill-row">
+          <span class="pill">🧑 Profile</span>
+          <span class="pill">🩸 Request Blood</span>
+          <span class="pill">📍 Location</span>
+          <span class="pill">📨 Saved Status</span>
+        </div>
+
+        <div class="user-welcome">
+          <div class="avatar" id="userAvatar">U</div>
+          <div>
+            <h4 id="userWelcomeTitle">Welcome, User</h4>
+            <p id="userWelcomeText">Your profile and request history will appear here after login.</p>
+          </div>
+        </div>
+
+        <div class="tool-grid">
+          <div class="tool">
+            <div class="ico">👤</div>
+            <div>
+              <h5>Profile View</h5>
+              <p>See the username used for login and a short project-style summary.</p>
+            </div>
+          </div>
+          <div class="tool">
+            <div class="ico">🩸</div>
+            <div>
+              <h5>Request Form</h5>
+              <p>Create a sample blood request directly from the user panel.</p>
+            </div>
+          </div>
+          <div class="tool">
+            <div class="ico">📌</div>
+            <div>
+              <h5>Request Status</h5>
+              <p>Saved requests can be shown in a simple table view below.</p>
+            </div>
+          </div>
+          <div class="tool">
+            <div class="ico">🔔</div>
+            <div>
+              <h5>Alerts</h5>
+              <p>Notifications show when requests are submitted or updated.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-box" style="margin-top:14px;">
+          <h4>Quick Blood Request</h4>
+          <p>Submit a sample request. It stores data in your browser for demo use.</p>
+          <form id="userRequestForm" class="form-stack" style="margin-top:14px;">
+            <div class="field-row">
+              <div class="field">
+                <label for="reqName">Your Name</label>
+                <input id="reqName" type="text" placeholder="Enter your name" required />
+              </div>
+              <div class="field">
+                <label for="reqBlood">Blood Group Needed</label>
+                <select id="reqBlood">
+                  <option>A+</option>
+                  <option>A-</option>
+                  <option>B+</option>
+                  <option>B-</option>
+                  <option>AB+</option>
+                  <option>AB-</option>
+                  <option>O+</option>
+                  <option>O-</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="reqCity">City</label>
+                <input id="reqCity" type="text" placeholder="Enter city" required />
+              </div>
+              <div class="field">
+                <label for="reqPhone">Phone</label>
+                <input id="reqPhone" type="text" placeholder="Enter phone number" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="reqDetails">Details</label>
+              <textarea id="reqDetails" rows="4" placeholder="Hospital name, urgency, extra notes..."></textarea>
+            </div>
+
+            <button type="submit" class="action-btn primary">Save User Request</button>
+          </form>
+        </div>
+
+        <div class="table-top" style="margin-top:18px;">
+          <div>
+            <h4 style="font-size:18px;">My Saved Requests</h4>
+            <p style="margin-top:5px; color:var(--muted); font-size:14px;">Stored locally for demo use.</p>
+          </div>
+          <button class="mini-btn" id="clearUserRequests" type="button">Clear My Requests</button>
+        </div>
+
+        <div class="table-wrap">
+          <table style="min-width:720px;">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Blood</th>
+                <th>City</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="userTableBody"></tbody>
+          </table>
+        </div>
+
+        <div class="note-box">
+          User password for demo: <strong>user123</strong>. The username can be anything you type.
+        </div>
+      </section>
+    </section>
+
+    <section class="dashboard-wrap">
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h3>Blood Compatibility Guide</h3>
+            <p>A handy reference panel that matches your BloodNet theme.</p>
+          </div>
+          <span class="live-pill">REFERENCE</span>
+        </div>
+        <div class="compat-list" id="compatList"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h3>Project Notes</h3>
+            <p>Good lines to use in your presentation or viva.</p>
+          </div>
+          <span class="live-pill">BCA READY</span>
+        </div>
+
+        <div class="panel-box">
+          <h4>What this file does</h4>
+          <p>
+            It provides a login page with two roles. Admin gets a request dashboard and user gets a request form plus profile panel.
+          </p>
+        </div>
+        <div class="panel-box">
+          <h4>How the authentication works</h4>
+          <p>
+            This is a demo system using simple checks in JavaScript. It is fine for a college project, but a real deployment should use secure backend authentication.
+          </p>
+        </div>
+        <div class="panel-box">
+          <h4>Recommended GitHub flow</h4>
+          <p>
+            Keep this file as <strong>login.html</strong> in the same repository as <strong>index.html</strong>, <strong>style.css</strong>, <strong>script.js</strong>, and <strong>README.md</strong>.
+          </p>
+        </div>
+        <div class="switch-area">
+          <div class="switch-card">
+            <h5>Admin Password</h5>
+            <p>Use <strong>admin000</strong> with username <strong>admin</strong>.</p>
+          </div>
+          <div class="switch-card">
+            <h5>User Password</h5>
+            <p>Use any name with password <strong>user123</strong>.</p>
+          </div>
+          <div class="switch-card">
+            <h5>Main Website</h5>
+            <p>Click the home button to open your main BloodNet page.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <p class="footer-note">
+      BloodNet • Educational project demo • Built for presentation, styling, and browser-based interactions.
+    </p>
+  </div>
+
+  <div class="toast" id="toast">Action completed</div>
+
+  <div class="modal-backdrop" id="compatModal">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <h3>Blood Compatibility Quick View</h3>
+          <p>Helpful during emergency request or donor matching.</p>
+        </div>
+        <button class="close-x" id="closeCompat" type="button">✕</button>
+      </div>
+      <div class="compat-list">
+        <div class="compat-item"><strong>O-</strong><span>Universal donor for red blood cells.</span></div>
+        <div class="compat-item"><strong>O+</strong><span>Can donate to O+, A+, B+, AB+.</span></div>
+        <div class="compat-item"><strong>AB+</strong><span>Universal recipient for red blood cells.</span></div>
+        <div class="compat-item"><strong>A+ / B+</strong><span>Common groups that can receive from same positive types and O groups.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const STORAGE_KEYS = {
+      requests: 'bloodnet_requests_v2',
+      userSession: 'bloodnet_user_session_v2'
+    };
+
+    const bloodPairs = [
+      { group: 'O-', donate: 'All blood groups', receive: 'O- only' },
+      { group: 'O+', donate: 'O+, A+, B+, AB+', receive: 'O-, O+' },
+      { group: 'A-', donate: 'A-, A+, AB-, AB+', receive: 'O-, A-' },
+      { group: 'A+', donate: 'A+, AB+', receive: 'O-, O+, A-, A+' },
+      { group: 'B-', donate: 'B-, B+, AB-, AB+', receive: 'O-, B-' },
+      { group: 'B+', donate: 'B+, AB+', receive: 'O-, O+, B-, B+' },
+      { group: 'AB-', donate: 'AB-, AB+', receive: 'O-, A-, B-, AB-' },
+      { group: 'AB+', donate: 'AB+ only', receive: 'All blood groups' }
+    ];
+
+    const defaultRequests = [
+      { id: 1, name: 'Arjun Singh', blood: 'O-', city: 'Amritsar', phone: '9876543210', details: 'Urgent hospital need. Please contact fast.', status: 'Pending', owner: 'admin-demo' },
+      { id: 2, name: 'Simran Kaur', blood: 'A+', city: 'Ludhiana', phone: '9123456780', details: 'Need one unit for surgery support.', status: 'Handled', owner: 'simran' },
+      { id: 3, name: 'Rahul Verma', blood: 'B+', city: 'Patiala', phone: '9988776655', details: 'Blood required for family member.', status: 'Pending', owner: 'rahul' }
+    ];
+
+    const els = {
+      stars: document.getElementById('stars'),
+      toast: document.getElementById('toast'),
+      navLogin: document.getElementById('navLogin'),
+      navAdmin: document.getElementById('navAdmin'),
+      navUser: document.getElementById('navUser'),
+      navCompat: document.getElementById('navCompat'),
+      goHome: document.getElementById('goHome'),
+      openCompat: document.getElementById('openCompat'),
+      showCompat: document.getElementById('showCompat'),
+      fillDemoBtn: document.getElementById('fillDemoBtn'),
+      seedData: document.getElementById('seedData'),
+      quickAdmin: document.getElementById('quickAdmin'),
+      quickUser: document.getElementById('quickUser'),
+      loginForm: document.getElementById('loginForm'),
+      loginBtn: document.getElementById('loginBtn'),
+      credentialsHint: document.getElementById('credentialsHint'),
+      fillDemo: document.getElementById('fillDemo'),
+      togglePass: document.getElementById('togglePass'),
+      username: document.getElementById('username'),
+      password: document.getElementById('password'),
+      formTitle: document.getElementById('formTitle'),
+      formSubtitle: document.getElementById('formSubtitle'),
+      statusBox: document.getElementById('statusBox'),
+      adminPanel: document.getElementById('adminPanel'),
+      userPanel: document.getElementById('userPanel'),
+      adminTableBody: document.getElementById('adminTableBody'),
+      userTableBody: document.getElementById('userTableBody'),
+      adminSearch: document.getElementById('adminSearch'),
+      refreshAdmin: document.getElementById('refreshAdmin'),
+      clearUserRequests: document.getElementById('clearUserRequests'),
+      reqName: document.getElementById('reqName'),
+      reqBlood: document.getElementById('reqBlood'),
+      reqCity: document.getElementById('reqCity'),
+      reqPhone: document.getElementById('reqPhone'),
+      reqDetails: document.getElementById('reqDetails'),
+      userRequestForm: document.getElementById('userRequestForm'),
+      userAvatar: document.getElementById('userAvatar'),
+      userWelcomeTitle: document.getElementById('userWelcomeTitle'),
+      userWelcomeText: document.getElementById('userWelcomeText'),
+      compatList: document.getElementById('compatList'),
+      compatModal: document.getElementById('compatModal'),
+      closeCompat: document.getElementById('closeCompat'),
+      statUsers: document.getElementById('statUsers'),
+      statReqs: document.getElementById('statReqs'),
+      statAdmins: document.getElementById('statAdmins'),
+      statMatches: document.getElementById('statMatches')
+    };
+
+    let mode = 'admin';
+    let session = null;
+
+    function toast(message) {
+      els.toast.textContent = message;
+      els.toast.classList.add('show');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => els.toast.classList.remove('show'), 2400);
+    }
+
+    function seedStars() {
+      const count = 90;
+      for (let i = 0; i < count; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 3}s`;
+        star.style.opacity = Math.random() * 0.8 + 0.2;
+        star.style.transform = `scale(${Math.random() * 1.3 + 0.5})`;
+        els.stars.appendChild(star);
+      }
+    }
+
+    function getRequests() {
+      const raw = localStorage.getItem(STORAGE_KEYS.requests);
+      if (!raw) return [...defaultRequests];
+      try {
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [...defaultRequests];
+      } catch {
+        return [...defaultRequests];
+      }
+    }
+
+    function saveRequests(data) {
+      localStorage.setItem(STORAGE_KEYS.requests, JSON.stringify(data));
+    }
+
+    function setSession(data) {
+      session = data;
+      localStorage.setItem(STORAGE_KEYS.userSession, JSON.stringify(data));
+    }
+
+    function getSession() {
+      const raw = localStorage.getItem(STORAGE_KEYS.userSession);
+      if (!raw) return null;
+      try {
+        return JSON.parse(raw);
+      } catch {
+        return null;
+      }
+    }
+
+    function renderCompatibility() {
+      els.compatList.innerHTML = bloodPairs.map(item => `
+        <div class="compat-item">
+          <strong>${item.group}</strong>
+          <span>Can donate to: ${item.donate} • Can receive from: ${item.receive}</span>
+        </div>
+      `).join('');
+    }
+
+    function renderAdminTable() {
+      const query = els.adminSearch.value.trim().toLowerCase();
+      const rows = getRequests().filter(r => {
+        const text = `${r.name} ${r.blood} ${r.city} ${r.phone} ${r.details} ${r.status}`.toLowerCase();
+        return !query || text.includes(query);
+      });
+
+      if (!rows.length) {
+        els.adminTableBody.innerHTML = `
+          <tr><td colspan="8" style="padding:20px; color:rgba(245,247,255,0.65);">No matching requests found.</td></tr>
+        `;
+      } else {
+        els.adminTableBody.innerHTML = rows.map((r, index) => `
+          <tr>
+            <td>${index + 1}</td>
+            <td>${r.name}</td>
+            <td>${r.blood}</td>
+            <td>${r.city}</td>
+            <td>${r.phone}</td>
+            <td>${r.details}</td>
+            <td>${r.status}</td>
+            <td>
+              <div class="row-actions">
+                <button class="small-action ok" data-action="handled" data-id="${r.id}" type="button">Handled</button>
+                <button class="small-action warn" data-action="pending" data-id="${r.id}" type="button">Pending</button>
+                <button class="small-action danger" data-action="delete" data-id="${r.id}" type="button">Delete</button>
+              </div>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      els.statReqs.textContent = String(getRequests().length);
+
+      els.adminTableBody.querySelectorAll('button[data-action]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const action = btn.dataset.action;
+          const id = Number(btn.dataset.id);
+          let data = getRequests();
+          const idx = data.findIndex(r => r.id === id);
+          if (idx === -1) return;
+
+          if (action === 'delete') {
+            data.splice(idx, 1);
+            saveRequests(data);
+            renderAdminTable();
+            renderUserTable();
+            updateStats();
+            toast('Request deleted');
+            return;
+          }
+
+          data[idx].status = action === 'handled' ? 'Handled' : 'Pending';
+          saveRequests(data);
+          renderAdminTable();
+          renderUserTable();
+          toast(`Request marked ${data[idx].status.toLowerCase()}`);
+        });
+      });
+    }
+
+    function renderUserTable() {
+      if (!session || session.role !== 'user') {
+        els.userTableBody.innerHTML = `
+          <tr><td colspan="6" style="padding:20px; color:rgba(245,247,255,0.65);">Login as a user to view your requests.</td></tr>
+        `;
+        return;
+      }
+
+      const data = getRequests().filter(r => r.owner === session.username);
+      if (!data.length) {
+        els.userTableBody.innerHTML = `
+          <tr><td colspan="6" style="padding:20px; color:rgba(245,247,255,0.65);">No saved requests yet. Submit one from above.</td></tr>
+        `;
+        return;
+      }
+
+      els.userTableBody.innerHTML = data.map((r, index) => `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${r.name}</td>
+          <td>${r.blood}</td>
+          <td>${r.city}</td>
+          <td>${r.status}</td>
+          <td>
+            <button class="small-action danger" data-user-delete="${r.id}" type="button">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+
+      els.userTableBody.querySelectorAll('button[data-user-delete]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = Number(btn.dataset.userDelete);
+          const data = getRequests().filter(r => r.id !== id);
+          saveRequests(data);
+          renderUserTable();
+          renderAdminTable();
+          updateStats();
+          toast('Your request was removed');
+        });
+      });
+    }
+
+    function updateStats() {
+      const data = getRequests();
+      els.statUsers.textContent = String(128 + Math.max(0, data.length * 2));
+      els.statReqs.textContent = String(data.length);
+      els.statAdmins.textContent = '1';
+      els.statMatches.textContent = '96%';
+    }
+
+    function showPanel(role) {
+      els.adminPanel.classList.add('hidden');
+      els.userPanel.classList.add('hidden');
+      if (role === 'admin') els.adminPanel.classList.remove('hidden');
+      if (role === 'user') els.userPanel.classList.remove('hidden');
+    }
+
+    function setTab(btnMode) {
+      mode = btnMode;
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.mode === btnMode));
+      if (btnMode === 'admin') {
+        els.loginBtn.textContent = 'Enter Admin Panel';
+        els.credentialsHint.textContent = 'Admin credentials: admin / admin000';
+        els.formTitle.textContent = 'Admin access';
+        els.formSubtitle.textContent = 'Open the control center and manage blood requests.';
+        els.statusBox.textContent = 'Admin can view all requests, update statuses, and delete old entries.';
+      } else {
+        els.loginBtn.textContent = 'Enter User Panel';
+        els.credentialsHint.textContent = 'User password: user123';
+        els.formTitle.textContent = 'User access';
+        els.formSubtitle.textContent = 'Login as a regular user and enter the dashboard.';
+        els.statusBox.textContent = 'Regular users can request blood and view their saved records.';
+      }
+      showPanel(null);
+    }
+
+    function openModal() { els.compatModal.classList.add('show'); }
+    function closeModal() { els.compatModal.classList.remove('show'); }
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => setTab(btn.dataset.mode));
+    });
+
+    els.togglePass.addEventListener('click', () => {
+      const isHidden = els.password.type === 'password';
+      els.password.type = isHidden ? 'text' : 'password';
+      els.togglePass.textContent = isHidden ? '🙈' : '👁';
+    });
+
+    els.fillDemo.addEventListener('click', () => {
+      if (mode === 'admin') {
+        els.username.value = 'admin';
+        els.password.value = 'admin000';
+        toast('Admin credentials filled');
+      } else {
+        els.username.value = 'sehajpreet';
+        els.password.value = 'user123';
+        toast('User credentials filled');
+      }
+    });
+
+    els.fillDemoBtn.addEventListener('click', () => {
+      els.username.value = mode === 'admin' ? 'admin' : 'sehajpreet';
+      els.password.value = mode === 'admin' ? 'admin000' : 'user123';
+      toast('Demo values inserted');
+    });
+
+    els.quickAdmin.addEventListener('click', () => {
+      setTab('admin');
+      els.username.value = 'admin';
+      els.password.value = 'admin000';
+      document.getElementById('loginBtn').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      toast('Admin login ready');
+    });
+
+    els.quickUser.addEventListener('click', () => {
+      setTab('user');
+      els.username.value = 'yourname';
+      els.password.value = 'user123';
+      document.getElementById('loginBtn').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      toast('User login ready');
+    });
+
+    els.goHome.addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+
+    els.openCompat.addEventListener('click', openModal);
+    els.showCompat.addEventListener('click', openModal);
+    els.navCompat.addEventListener('click', openModal);
+    els.closeCompat.addEventListener('click', closeModal);
+    els.compatModal.addEventListener('click', (e) => {
+      if (e.target === els.compatModal) closeModal();
+    });
+
+    els.navLogin.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    els.navAdmin.addEventListener('click', () => {
+      setTab('admin');
+      document.querySelector('.login-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    els.navUser.addEventListener('click', () => {
+      setTab('user');
+      document.querySelector('.login-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    els.seedData.addEventListener('click', () => {
+      saveRequests([...defaultRequests]);
+      updateStats();
+      renderAdminTable();
+      renderUserTable();
+      toast('Demo data restored');
+    });
+
+    els.refreshAdmin.addEventListener('click', () => {
+      renderAdminTable();
+      toast('Admin table refreshed');
+    });
+
+    els.adminSearch.addEventListener('input', renderAdminTable);
+
+    els.clearUserRequests.addEventListener('click', () => {
+      if (!session || session.role !== 'user') {
+        toast('Login as a user first');
+        return;
+      }
+      const cleaned = getRequests().filter(r => r.owner !== session.username);
+      saveRequests(cleaned);
+      renderUserTable();
+      renderAdminTable();
+      updateStats();
+      toast('Your saved requests were cleared');
+    });
+
+    els.loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = els.username.value.trim();
+      const password = els.password.value.trim();
+
+      if (mode === 'admin') {
+        if (username === 'admin' && password === 'admin000') {
+          setSession({ role: 'admin', username });
+          showPanel('admin');
+          renderAdminTable();
+          updateStats();
+          toast('Admin login successful');
+          els.statusBox.textContent = 'Welcome admin. You can now manage requests in the dashboard below.';
+          window.scrollTo({ top: document.querySelector('.dashboard-wrap').offsetTop - 16, behavior: 'smooth' });
+        } else {
+          toast('Invalid admin credentials');
+        }
+      } else {
+        if (password === 'user123') {
+          setSession({ role: 'user', username });
+          els.userAvatar.textContent = username ? username.charAt(0).toUpperCase() : 'U';
+          els.userWelcomeTitle.textContent = `Welcome, ${username || 'User'}`;
+          els.userWelcomeText.textContent = 'You are now inside the user dashboard. Use the form below to create a blood request.';
+          showPanel('user');
+          renderUserTable();
+          updateStats();
+          toast('User login successful');
+          window.scrollTo({ top: document.querySelector('.dashboard-wrap').offsetTop - 16, behavior: 'smooth' });
+        } else {
+          toast('Wrong user password');
+        }
+      }
+    });
+
+    document.getElementById('userRequestForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!session || session.role !== 'user') {
+        toast('Login as a user first');
+        return;
+      }
+
+      const name = els.reqName.value.trim();
+      const blood = els.reqBlood.value;
+      const city = els.reqCity.value.trim();
+      const phone = els.reqPhone.value.trim();
+      const details = els.reqDetails.value.trim() || 'No extra details provided.';
+
+      const data = getRequests();
+      data.unshift({
+        id: Date.now(),
+        name,
+        blood,
+        city,
+        phone,
+        details,
+        status: 'Pending',
+        owner: session.username
+      });
+      saveRequests(data);
+      updateStats();
+      renderUserTable();
+      renderAdminTable();
+      e.target.reset();
+      toast('User request saved');
+    });
+
+    function restoreSessionUI() {
+      const saved = getSession();
+      if (!saved) return;
+      session = saved;
+      if (saved.role === 'admin') {
+        setTab('admin');
+        showPanel('admin');
+        renderAdminTable();
+      } else if (saved.role === 'user') {
+        setTab('user');
+        showPanel('user');
+        els.userAvatar.textContent = saved.username ? saved.username.charAt(0).toUpperCase() : 'U';
+        els.userWelcomeTitle.textContent = `Welcome back, ${saved.username}`;
+        els.userWelcomeText.textContent = 'Your saved user session has been restored from the browser.';
+        renderUserTable();
+      }
+      updateStats();
+    }
+
+    function init() {
+      seedStars();
+      renderCompatibility();
+      saveRequests(getRequests());
+      updateStats();
+      renderAdminTable();
+      renderUserTable();
+      restoreSessionUI();
+      setTab('admin');
+    }
+
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      document.querySelectorAll('.bg-orb, .ripple').forEach((el, index) => {
+        const speed = 0.02 + index * 0.01;
+        el.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+
+    init();
+  </script>
+</body>
+</html>
+
+
+
+        
